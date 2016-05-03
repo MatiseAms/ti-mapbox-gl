@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+architectures: armv7 arm64 i386 x86_64
+description: mapbox
+author: Timan Rebel
+license: Specify your license
+copyright: Copyright (c) 2016 by 
+
+# these should not be edited
+name: mapbox
+moduleid: matise.mapbox
+guid: d1b26243-720d-48f1-a108-d93a9f2192e1
+platform: iphone
+minsdk: 5.2.2.GA

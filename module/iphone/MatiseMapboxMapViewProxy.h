@@ -9,5 +9,8 @@
 @interface MatiseMapboxMapViewProxy : TiViewProxy {
 
 }
+- (void)addAnnotation:(id)args;
+- (void)removeAnnotation:(id)args;
+- (void)drawPolyline:(id)jsonPath;
 
 @end

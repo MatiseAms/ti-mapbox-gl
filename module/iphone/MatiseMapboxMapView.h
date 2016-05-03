@@ -6,9 +6,14 @@
  */
 #import "TiUIView.h"
 #import <Mapbox/Mapbox.h>
+#import "MatiseMapboxPointAnnotationProxy.h"
 
 @interface MatiseMapboxMapView : TiUIView {
     MGLMapView *mapView;
 }
+
+- (void)addAnnotation:(id)args;
+- (void)removeAnnotation:(id)args;
+- (void)drawPolyline:(id)jsonPath;
 
 @end

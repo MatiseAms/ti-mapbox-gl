@@ -7,6 +7,7 @@
 
 #import "TiUtils.h"
 #import "MatiseMapboxMapView.h"
+#import "MatiseMapboxPointAnnotation.h"
 
 @interface MatiseMapboxMapView () <MGLMapViewDelegate>
 @end
@@ -190,6 +191,37 @@
                                           cancelButtonTitle:nil
                                           otherButtonTitles:@"OK", nil];
     [alert show];
+}
+
+- (MGLAnnotationImage *)mapView:(MGLMapView *)mapView imageForAnnotation:(id <MGLAnnotation>)annotation
+{
+    MatiseMapboxPointAnnotation *marker = (MatiseMapboxPointAnnotation *)annotation;
+    
+    // Try to reuse the existing ‘pisa’ annotation image, if it exists
+    MGLAnnotationImage *annotationImage = [mapView dequeueReusableAnnotationImageWithIdentifier:@"pisa"];
+    
+    // If the ‘pisa’ annotation image hasn‘t been set yet, initialize it here
+    if ( ! annotationImage)
+    {
+        NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:marker.image];
+        
+        // Leaning Tower of Pisa by Stefan Spieler from the Noun Project
+        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+        
+        // The anchor point of an annotation is currently always the center. To
+        // shift the anchor point to the bottom of the annotation, the image
+        // asset includes transparent bottom padding equal to the original image
+        // height.
+        //
+        // To make this padding non-interactive, we create another image object
+        // with a custom alignment rect that excludes the padding.
+        image = [image imageWithAlignmentRectInsets:UIEdgeInsetsMake(0, 0, image.size.height/2, 0)];
+        
+        // Initialize the ‘pisa’ annotation image with the UIImage we just loaded
+        annotationImage = [MGLAnnotationImage annotationImageWithImage:image reuseIdentifier:@"pisa"];
+    }
+    
+    return annotationImage;
 }
 
 

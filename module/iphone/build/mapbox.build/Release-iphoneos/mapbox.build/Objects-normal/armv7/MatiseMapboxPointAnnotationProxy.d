@@ -44,6 +44,7 @@ dependencies: \
   /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/defines.h \
   /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiThreading.h \
   /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiPublicAPI.h \
+  /Users/timanrebel/Development/Matise/mapbox/module/iphone/Classes/MatiseMapboxPointAnnotation.h \
   /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiUtils.h \
   /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiDimension.h \
   /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiColor.h \

@@ -27,6 +27,8 @@
 		24DE9E1111C5FE74003F90F6 /* MatiseMapboxModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* MatiseMapboxModuleAssets.h */; };
 		24DE9E1211C5FE74003F90F6 /* MatiseMapboxModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* MatiseMapboxModuleAssets.m */; };
 		AA747D9F0F9514B9006C5449 /* MatiseMapbox_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* MatiseMapbox_Prefix.pch */; };
+		BC46D4A71CE0B78800615160 /* MatiseMapboxPointAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = BC46D4A51CE0B78800615160 /* MatiseMapboxPointAnnotation.h */; };
+		BC46D4A81CE0B78800615160 /* MatiseMapboxPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC46D4A61CE0B78800615160 /* MatiseMapboxPointAnnotation.m */; };
 		BC4DF94D1CD7D1AB008DE65C /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4DF94C1CD7D1AB008DE65C /* Mapbox.framework */; };
 		BC83B55F1CD78AC800A53DE2 /* MatiseMapboxMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = BC83B55D1CD78AC800A53DE2 /* MatiseMapboxMapView.h */; };
 		BC83B5601CD78AC800A53DE2 /* MatiseMapboxMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC83B55E1CD78AC800A53DE2 /* MatiseMapboxMapView.m */; };
@@ -53,6 +55,8 @@
 		24DE9E0F11C5FE74003F90F6 /* MatiseMapboxModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatiseMapboxModuleAssets.h; path = Classes/MatiseMapboxModuleAssets.h; sourceTree = "<group>"; };
 		24DE9E1011C5FE74003F90F6 /* MatiseMapboxModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatiseMapboxModuleAssets.m; path = Classes/MatiseMapboxModuleAssets.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* MatiseMapbox_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatiseMapbox_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		BC46D4A51CE0B78800615160 /* MatiseMapboxPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatiseMapboxPointAnnotation.h; path = Classes/MatiseMapboxPointAnnotation.h; sourceTree = "<group>"; };
+		BC46D4A61CE0B78800615160 /* MatiseMapboxPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatiseMapboxPointAnnotation.m; path = Classes/MatiseMapboxPointAnnotation.m; sourceTree = "<group>"; };
 		BC4DF94C1CD7D1AB008DE65C /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = platform/Mapbox.framework; sourceTree = "<group>"; };
 		BC83B55D1CD78AC800A53DE2 /* MatiseMapboxMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatiseMapboxMapView.h; sourceTree = "<group>"; };
 		BC83B55E1CD78AC800A53DE2 /* MatiseMapboxMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatiseMapboxMapView.m; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BCF860B91CDCA6A10044A0A4 /* Categories */,
 				BCAB3FDD1CD8D392007ABF81 /* PointAnnotation */,
 				BC83B5651CD78B5600A53DE2 /* MapView */,
 				24DE9E0F11C5FE74003F90F6 /* MatiseMapboxModuleAssets.h */,
@@ -140,8 +145,17 @@
 			children = (
 				BCAB3FDE1CD8D3B6007ABF81 /* MatiseMapboxPointAnnotationProxy.h */,
 				BCAB3FDF1CD8D3B6007ABF81 /* MatiseMapboxPointAnnotationProxy.m */,
+				BC46D4A51CE0B78800615160 /* MatiseMapboxPointAnnotation.h */,
+				BC46D4A61CE0B78800615160 /* MatiseMapboxPointAnnotation.m */,
 			);
 			name = PointAnnotation;
+			sourceTree = "<group>";
+		};
+		BCF860B91CDCA6A10044A0A4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +167,7 @@
 			files = (
 				AA747D9F0F9514B9006C5449 /* MatiseMapbox_Prefix.pch in Headers */,
 				24DD6CF91134B3F500162E58 /* MatiseMapboxModule.h in Headers */,
+				BC46D4A71CE0B78800615160 /* MatiseMapboxPointAnnotation.h in Headers */,
 				BC83B55F1CD78AC800A53DE2 /* MatiseMapboxMapView.h in Headers */,
 				BCAB3FE01CD8D3B6007ABF81 /* MatiseMapboxPointAnnotationProxy.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* MatiseMapboxModuleAssets.h in Headers */,
@@ -241,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC46D4A81CE0B78800615160 /* MatiseMapboxPointAnnotation.m in Sources */,
 				24DD6CFA1134B3F500162E58 /* MatiseMapboxModule.m in Sources */,
 				BCAB3FE11CD8D3B6007ABF81 /* MatiseMapboxPointAnnotationProxy.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* MatiseMapboxModuleAssets.m in Sources */,

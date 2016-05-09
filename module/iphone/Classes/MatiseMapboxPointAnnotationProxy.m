@@ -16,12 +16,16 @@
     double lng = [TiUtils doubleValue:[properties objectForKey:@"lng"]];
     NSString *title = [properties objectForKey:@"title"];
     NSString *subtitle = [properties objectForKey:@"subtitle"];
+    NSString *image = [properties objectForKey:@"image"];
+    
+    NSLog(@"[INFO] Image: %@", image);
     
     // Declare the marker `hello` and set its coordinates, title, and subtitle
-    marker = [[MGLPointAnnotation alloc] init];
+    marker = [[MatiseMapboxPointAnnotation alloc] init];
     marker.coordinate = CLLocationCoordinate2DMake(lat, lng);
     marker.title = title;
     marker.subtitle = subtitle;
+    marker.image = image;
 }
 
 -(void)setCoordinate:(id)args

@@ -7,9 +7,10 @@
 
 #import <Mapbox/Mapbox.h>
 #import "TiProxy.h"
+#import "MatiseMapboxPointAnnotation.h"
 
 @interface MatiseMapboxPointAnnotationProxy : TiProxy {
-    MGLPointAnnotation *marker;
+    MatiseMapboxPointAnnotation *marker;
 }
 
 -(id)marker;

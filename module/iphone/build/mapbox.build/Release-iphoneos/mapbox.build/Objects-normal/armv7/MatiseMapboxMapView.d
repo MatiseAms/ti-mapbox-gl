@@ -58,4 +58,5 @@ dependencies: \
   /Users/timanrebel/Development/Matise/mapbox/module/iphone/platform/Mapbox.framework/Headers/MGLStyle.h \
   /Users/timanrebel/Development/Matise/mapbox/module/iphone/platform/Mapbox.framework/Headers/MGLTilePyramidOfflineRegion.h \
   /Users/timanrebel/Development/Matise/mapbox/module/iphone/platform/Mapbox.framework/Headers/MGLUserLocation.h \
-  /Users/timanrebel/Development/Matise/mapbox/module/iphone/Classes/MatiseMapboxPointAnnotationProxy.h
+  /Users/timanrebel/Development/Matise/mapbox/module/iphone/Classes/MatiseMapboxPointAnnotationProxy.h \
+  /Users/timanrebel/Development/Matise/mapbox/module/iphone/Classes/MatiseMapboxPointAnnotation.h

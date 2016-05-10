@@ -18,8 +18,6 @@
     NSString *subtitle = [properties objectForKey:@"subtitle"];
     NSString *image = [properties objectForKey:@"image"];
     
-    NSLog(@"[INFO] Image: %@", image);
-    
     // Declare the marker `hello` and set its coordinates, title, and subtitle
     marker = [[MatiseMapboxPointAnnotation alloc] init];
     marker.coordinate = CLLocationCoordinate2DMake(lat, lng);

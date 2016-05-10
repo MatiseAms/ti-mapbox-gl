@@ -37,4 +37,7 @@ dependencies: \
   /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/LayoutConstraint.h \
   /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiGradient.h \
   /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiRect.h \
-  /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiViewTemplate.h
+  /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiViewTemplate.h \
+  /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiHost.h \
+  /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/Bridge.h \
+  /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/iphone/include/TiStylesheet.h

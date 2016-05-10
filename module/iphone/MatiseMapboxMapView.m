@@ -69,6 +69,25 @@
 }
 
 #pragma mark Custom functions
+-(void)setCenterCoordinate:(id)args
+{
+    ENSURE_SINGLE_ARG(args, NSDictionary);
+    
+    double lat = [TiUtils doubleValue:[args objectForKey:@"lat"]];
+    double lng = [TiUtils doubleValue:[args objectForKey:@"lng"]];
+    double zoom = mapView.zoomLevel;
+    BOOL animated = YES;
+    
+    if([args objectForKey:@"zoom"] != nil)
+        zoom = [TiUtils doubleValue:[args objectForKey:@"zoom"]];
+    if([args objectForKey:@"animated"] != nil)
+        animated = [TiUtils boolValue:[args objectForKey:@"animated"]];
+    
+    [mapView setCenterCoordinate:CLLocationCoordinate2DMake(lat, lng)
+                       zoomLevel:zoom
+                        animated:animated];
+}
+
 -(void)addAnnotation:(id)args
 {
     MatiseMapboxPointAnnotationProxy *annotation = [args objectAtIndex:0];
@@ -146,12 +165,12 @@
 - (CGFloat)mapView:(MGLMapView *)mapView lineWidthForPolylineAnnotation:(MGLPolyline *)annotation
 {
     // Set the line width for polyline annotations
-    return 2.0f;
+    return 3.0f;
 }
 
 - (UIColor *)mapView:(MGLMapView *)mapView strokeColorForShapeAnnotation:(MGLShape *)annotation
 {
-    return [UIColor redColor];
+    return [UIColor colorWithRed:0.94 green:0.79 blue:0.12 alpha:1.0];
 }
 
 - (BOOL)mapView:(MGLMapView *)mapView annotationCanShowCallout:(id<MGLAnnotation>)annotation
@@ -198,7 +217,7 @@
     MatiseMapboxPointAnnotation *marker = (MatiseMapboxPointAnnotation *)annotation;
     
     // Try to reuse the existing ‘pisa’ annotation image, if it exists
-    MGLAnnotationImage *annotationImage = [mapView dequeueReusableAnnotationImageWithIdentifier:@"pisa"];
+    MGLAnnotationImage *annotationImage = [mapView dequeueReusableAnnotationImageWithIdentifier:marker.image];
     
     // If the ‘pisa’ annotation image hasn‘t been set yet, initialize it here
     if ( ! annotationImage)
@@ -218,7 +237,7 @@
         image = [image imageWithAlignmentRectInsets:UIEdgeInsetsMake(0, 0, image.size.height/2, 0)];
         
         // Initialize the ‘pisa’ annotation image with the UIImage we just loaded
-        annotationImage = [MGLAnnotationImage annotationImageWithImage:image reuseIdentifier:@"pisa"];
+        annotationImage = [MGLAnnotationImage annotationImageWithImage:image reuseIdentifier:marker.image];
     }
     
     return annotationImage;

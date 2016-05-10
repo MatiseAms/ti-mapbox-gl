@@ -7,10 +7,17 @@
 
 #import "MatiseMapboxMapViewProxy.h"
 #import "TiUtils.h"
+#import "TiHost.h"
 
 @implementation MatiseMapboxMapViewProxy
 
 #pragma mark Custom functions
+-(void)setCenterCoordinate:(id)args
+{
+    [[self view] performSelectorOnMainThread:@selector(setCenterCoordinate:)
+                                  withObject:args waitUntilDone:NO];
+}
+
 -(void)addAnnotation:(id)args
 {
     [[self view] performSelectorOnMainThread:@selector(addAnnotation:)

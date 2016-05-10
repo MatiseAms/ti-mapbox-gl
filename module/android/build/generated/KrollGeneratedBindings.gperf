@@ -1,0 +1,22 @@
+%define lookup-function-name lookupGeneratedInit
+%define class-name MapboxBindings
+%{
+
+#include <string.h>
+#include <v8.h>
+#include <KrollBindings.h>
+
+#include "matise.mapbox.MapViewProxy.h"
+#include "matise.mapbox.MapboxModule.h"
+#include "matise.mapbox.ExampleProxy.h"
+#include "matise.mapbox.DemoViewProxy.h"
+
+
+%}
+struct titanium::bindings::BindEntry;
+%%
+matise.mapbox.MapViewProxy, ::matise::mapbox::mapbox::MapViewProxy::bindProxy, ::matise::mapbox::mapbox::MapViewProxy::dispose
+matise.mapbox.MapboxModule, ::matise::mapbox::MapboxModule::bindProxy, ::matise::mapbox::MapboxModule::dispose
+matise.mapbox.ExampleProxy, ::matise::mapbox::mapbox::ExampleProxy::bindProxy, ::matise::mapbox::mapbox::ExampleProxy::dispose
+matise.mapbox.DemoViewProxy, ::matise::mapbox::mapbox::DemoViewProxy::bindProxy, ::matise::mapbox::mapbox::DemoViewProxy::dispose
+%%

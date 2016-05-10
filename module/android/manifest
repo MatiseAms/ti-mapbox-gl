@@ -6,13 +6,13 @@ version: 1.0.0
 apiversion: 2
 architectures: armeabi armeabi-v7a x86
 description: mapbox
-author: Timan Rebel
+author: Your Name
 license: Specify your license
-copyright: Copyright (c) 2016 by 
+copyright: Copyright (c) 2016 by Your Company
 
 # these should not be edited
 name: mapbox
 moduleid: matise.mapbox
-guid: d1b26243-720d-48f1-a108-d93a9f2192e1
+guid: 37e00c5f-f51c-465c-b82e-ba7f0ed460d7
 platform: android
 minsdk: 5.2.2.GA

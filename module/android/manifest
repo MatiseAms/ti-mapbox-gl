@@ -16,3 +16,4 @@ moduleid: matise.mapbox
 guid: 37e00c5f-f51c-465c-b82e-ba7f0ed460d7
 platform: android
 minsdk: 5.2.2.GA
+respackage: com.mapbox.mapboxsdk

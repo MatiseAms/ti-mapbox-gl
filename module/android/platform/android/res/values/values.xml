@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array formatted="false" name="attribution_links" translatable="false">
+        <item>https://www.mapbox.com/about/maps/</item>
+        <item>http://www.openstreetmap.org/about/</item>
+        <item>https://www.mapbox.com/map-feedback/#/%1$f/%2$f/%3$d</item>
+        <item>https://www.mapbox.com/telemetry/</item>
+    </array>
+    <array name="attribution_names">
+        <item>© Mapbox</item>
+        <item>© OpenStreetMap</item>
+        <item>Improve this map</item>
+        <item>Telemetry Settings</item>
+    </array>
+    <array name="attribution_telemetry_options">
+        <item>Tell Me More</item>
+        <item>Don\'t Participate</item>
+        <item>Participate</item>
+    </array>
+    <array name="attribution_telemetry_options_already_participating">
+        <item>Tell Me More</item>
+        <item>Stop Participating</item>
+        <item>Keep Participating</item>
+    </array>
+    <color name="black">#000000</color>
+    <color name="gray">#7D7F80</color>
+    <color name="gray_light">#EEEEEE</color>
+    <color name="mapbox_blue">#1E8CAB</color>
+    <color name="my_location_ring">@color/mapbox_blue</color>
+    <color name="white">#FFFFFF</color>
+    <declare-styleable name="MapView"><attr format="float" name="center_longitude"/><attr format="float" name="center_latitude"/><attr format="float" name="zoom"/><attr format="float" name="zoom_max"/><attr format="float" name="zoom_min"/><attr format="float" name="direction"/><attr format="float" name="tilt"/><attr format="boolean" name="zoom_enabled"/><attr format="boolean" name="scroll_enabled"/><attr format="boolean" name="rotate_enabled"/><attr format="boolean" name="tilt_enabled"/><attr format="boolean" name="zoom_controls_enabled"/><attr format="boolean" name="debug_active"/><attr format="string" name="style_url"/><attr format="string" name="access_token"/><attr format="string" name="style_classes"/><attr format="boolean" name="my_location_enabled"/><attr format="boolean" name="compass_enabled"/><attr name="compass_gravity"><flag name="top" value="0x30"/><flag name="bottom" value="0x50"/><flag name="left" value="0x03"/><flag name="right" value="0x05"/><flag name="center_vertical" value="0x10"/><flag name="fill_vertical" value="0x70"/><flag name="center_horizontal" value="0x01"/><flag name="fill_horizontal" value="0x07"/><flag name="center" value="0x11"/><flag name="fill" value="0x77"/><flag name="clip_vertical" value="0x80"/><flag name="clip_horizontal" value="0x08"/><flag name="start" value="0x00800003"/><flag name="end" value="0x00800005"/></attr><attr format="dimension" name="compass_margin_left"/><attr format="dimension" name="compass_margin_top"/><attr format="dimension" name="compass_margin_right"/><attr format="dimension" name="compass_margin_bottom"/><attr name="logo_gravity"><flag name="top" value="0x30"/><flag name="bottom" value="0x50"/><flag name="left" value="0x03"/><flag name="right" value="0x05"/><flag name="center_vertical" value="0x10"/><flag name="fill_vertical" value="0x70"/><flag name="center_horizontal" value="0x01"/><flag name="fill_horizontal" value="0x07"/><flag name="center" value="0x11"/><flag name="fill" value="0x77"/><flag name="clip_vertical" value="0x80"/><flag name="clip_horizontal" value="0x08"/><flag name="start" value="0x00800003"/><flag name="end" value="0x00800005"/></attr><attr format="dimension" name="logo_margin_left"/><attr format="dimension" name="logo_margin_top"/><attr format="dimension" name="logo_margin_right"/><attr format="dimension" name="logo_margin_bottom"/><attr format="boolean" name="logo_enabled"/><attr name="attribution_gravity"><flag name="top" value="0x30"/><flag name="bottom" value="0x50"/><flag name="left" value="0x03"/><flag name="right" value="0x05"/><flag name="center_vertical" value="0x10"/><flag name="fill_vertical" value="0x70"/><flag name="center_horizontal" value="0x01"/><flag name="fill_horizontal" value="0x07"/><flag name="center" value="0x11"/><flag name="fill" value="0x77"/><flag name="clip_vertical" value="0x80"/><flag name="clip_horizontal" value="0x08"/><flag name="start" value="0x00800003"/><flag name="end" value="0x00800005"/></attr><attr format="dimension" name="attribution_margin_left"/><attr format="dimension" name="attribution_margin_top"/><attr format="dimension" name="attribution_margin_right"/><attr format="dimension" name="attribution_margin_bottom"/><attr format="boolean" name="attribution_enabled"/></declare-styleable>
+    <dimen name="eight_dp">8dp</dimen>
+    <dimen name="infowindow_line_width">1.5dp</dimen>
+    <dimen name="infowindow_margin">8dp</dimen>
+    <dimen name="infowindow_offset">-2dp</dimen>
+    <dimen name="infowindow_tipview_width">20dp</dimen>
+    <dimen name="seven_dp">7dp</dimen>
+    <dimen name="seventy_six_dp">76dp</dimen>
+    <dimen name="sixteen_dp">16dp</dimen>
+    <dimen name="ten_dp">10dp</dimen>
+    <string name="attributionTelemetryMessage">You are helping to make OpenStreetMap and Mapbox maps better by contributing anonymous usage data.</string>
+    <string name="attributionTelemetryTitle">Make Mapbox Maps Better</string>
+    <string name="attributionsDialogTitle">Mapbox Android SDK</string>
+    <string name="attributionsIconContentDescription">Attribution icon. Click to show attribution dialog.</string>
+    <string name="compassContentDescription">Map compass. Click to reset the map rotation to North.</string>
+    <string name="infoWindowAddress">Address</string>
+    <string name="infoWindowDescription">Description</string>
+    <string name="infoWindowTitle">Title</string>
+    <string name="mapboxIconContentDescription">The Mapbox logo.</string>
+    <string name="style_dark">mapbox://styles/mapbox/dark-v8</string>
+    <string name="style_emerald">mapbox://styles/mapbox/emerald-v8</string>
+    <string name="style_light">mapbox://styles/mapbox/light-v8</string>
+    <string name="style_mapbox_streets">mapbox://styles/mapbox/streets-v8</string>
+    <string name="style_satellite">mapbox://styles/mapbox/satellite-v8</string>
+    <string name="style_satellite_streets">mapbox://styles/mapbox/satellite-hybrid-v8</string>
+    <style name="AttributionAlertDialogStyle" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:background">@color/mapbox_blue</item>
+    </style>
+</resources>

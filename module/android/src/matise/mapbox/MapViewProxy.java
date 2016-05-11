@@ -12,6 +12,7 @@ import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollProxy;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.titanium.TiC;
+import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.titanium.util.Log;
 import org.appcelerator.titanium.util.TiConfig;
 import org.appcelerator.titanium.util.TiConvert;
@@ -32,11 +33,20 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
-
 import android.app.Activity;
 
+import com.mapbox.mapboxsdk.camera.CameraPosition;
+import com.mapbox.mapboxsdk.constants.Style;
+import com.mapbox.mapboxsdk.geometry.LatLng;
+import com.mapbox.mapboxsdk.maps.MapboxMap;
+import com.mapbox.mapboxsdk.maps.MapboxMapOptions;
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+import com.mapbox.mapboxsdk.maps.SupportMapFragment;
 
-// This proxy can be created by calling Mapbox.createExample({message: "hello world"})
+// fragment test
+import org.appcelerator.titanium.view.TiUIFragment;
+import android.support.v4.app.Fragment;
+
 @Kroll.proxy(creatableInModule=MapboxModule.class)
 public class MapViewProxy extends TiViewProxy
 {
@@ -45,14 +55,22 @@ public class MapViewProxy extends TiViewProxy
     private static final boolean DBG = TiConfig.LOGD;
 
     private MapView mapView;
+    private MapboxMap mapboxMap;
 
-    private class MapViewView extends TiUIView
+    // Variables that are needed during setup
+    private String styleUrl = Style.SATELLITE;
+    private double lat = 0;
+    private double lng = 0;
+    private double zoom = 10;
+
+    private class MapViewFragment extends TiUIFragment
     {
+        public MapViewFragment(final TiViewProxy proxy, Activity activity) {
+            super(proxy, activity);
+        }
 
-
-        public MapViewView(TiViewProxy proxy) {
-            super(proxy);
-
+        @Override
+    	protected Fragment createFragment() {
             // Get access token from AndroidManifest
             String accessToken = "";
 
@@ -68,46 +86,49 @@ public class MapViewProxy extends TiViewProxy
             	Log.e(TAG, "Failed to load meta-data, NullPointer: " + e.getMessage());
             }
 
-            // Get MapView from layout file
-            String packageName = proxy.getActivity().getPackageName();
-			Resources resources = proxy.getActivity().getResources();
-			View mapViewWrapper;
-			int resId_mapboxLayout = -1;
-			int resId_mapView = -1;
+            // Set options
+            MapboxMapOptions options = new MapboxMapOptions();
+            options.accessToken(accessToken);
+            options.styleUrl(styleUrl);
 
-			resId_mapboxLayout = resources.getIdentifier("matise_mapbox", "layout", packageName);
-			resId_mapView = resources.getIdentifier("matiseMapView","id", packageName);
+            if(lat != 0) {
+                options.camera(new CameraPosition.Builder()
+                    .target(new LatLng(lat, lng))
+                    .zoom(zoom)
+                    .build());
+            }
 
-			LayoutInflater inflater = LayoutInflater.from(getActivity());
-			mapViewWrapper = inflater.inflate(resId_mapboxLayout, null);
-			mapView = (MapView) mapViewWrapper.findViewById(resId_mapView);
+            // Create MapFragment
+            SupportMapFragment map = SupportMapFragment.newInstance(options);
 
-            setNativeView(mapViewWrapper);
+    		if (map instanceof SupportMapFragment) {
+                map.getMapAsync(new OnMapReadyCallback() {
+                    @Override
+                    public void onMapReady(MapboxMap _mapboxMap) {
+                        mapboxMap = _mapboxMap;
 
-            // setNativeView(view);
-            //
-            // mapView = new MapView(proxy.getActivity());
-            // mapView.setAccessToken(accessToken);
-            //
-            // //mapView.onCreate(savedInstanceState);
-            // mapView.getMapAsync(new OnMapReadyCallback() {
-            //     @Override
-            //     public void onMapReady(MapboxMap mapboxMap) {
-            //
-            //         // Customize map with markers, polylines, etc.
-            //     }
-            // });
-            //
-            // view.addView(mapView);
-        }
+                        // Customize map with markers, polylines, etc.
+
+                    }
+                });
+            }
+
+            return map;
+    	}
 
         @Override
-        public void processProperties(KrollDict d)
+        public void processProperties(KrollDict options)
         {
-            super.processProperties(d);
+            super.processProperties(options);
+
+            Log.e(TAG, "***** processing!");
+
+            if (options.containsKey("styleUrl")) {
+                //styleUrl = options.get("styleUrl");
+                // Log.e(TAG, "***** styleUrl!");
+            }
         }
     }
-
 
     // Constructor
     public MapViewProxy()
@@ -118,92 +139,34 @@ public class MapViewProxy extends TiViewProxy
     @Override
     public TiUIView createView(Activity activity)
     {
-        TiUIView view = new MapViewView(this);
+        MapViewFragment view = new MapViewFragment(this, activity);
         view.getLayoutParams().autoFillsHeight = true;
         view.getLayoutParams().autoFillsWidth = true;
         return view;
     }
 
-    ////////////////////
-    // @Override
-    // protected void onCreate(Bundle savedInstanceState) {
-    //     super.onCreate(savedInstanceState);
-    //
-    //     String packageName = proxy.getActivity().getPackageName();
-	// 	Resources resources = proxy.getActivity().getResources();
-    //
-    //
-    //
-    //     mapView = (MapView) findViewById(R.id.mapView);
-    //     mapView.onCreate(savedInstanceState);
-    //     mapView.getMapAsync(new OnMapReadyCallback() {
-    //         @Override
-    //         public void onMapReady(MapboxMap mapboxMap) {
-    //
-    //             // Customize map with markers, polylines, etc.
-    //         }
-    //     });
-    // }
-    //
-    // @Override
-    // public void onResume() {
-    //     super.onResume();
-    //     mapView.onResume();
-    // }
-    //
-    // @Override
-    // public void onPause() {
-    //     super.onPause();
-    //     mapView.onPause();
-    // }
-    //
-    // @Override
-    // public void onLowMemory() {
-    //     super.onLowMemory();
-    //     mapView.onLowMemory();
-    // }
-    //
-    // @Override
-    // protected void onDestroy() {
-    //     super.onDestroy();
-    //     mapView.onDestroy();
-    // }
-    //
-    // @Override
-    // protected void onSaveInstanceState(Bundle outState) {
-    //     super.onSaveInstanceState(outState);
-    //     mapView.onSaveInstanceState(outState);
-    // }
-    ////////////////////
-
     // Handle creation options
     @Override
     public void handleCreationDict(KrollDict options)
     {
+        Log.e(TAG, "***** handleCreationDict");
+
         super.handleCreationDict(options);
 
-        if (options.containsKey("message")) {
-            Log.d(TAG, "example created with message: " + options.get("message"));
+        if (options.containsKey("styleUrl")) {
+            styleUrl = TiConvert.toString(options.get("styleUrl"));
+        }
+
+        if (options.containsKey("lat") && options.containsKey("lng")) {
+            lat = TiConvert.toDouble(options.get("lat"));
+            lng = TiConvert.toDouble(options.get("lng"));
+        }
+
+        if (options.containsKey("zoom")) {
+            zoom = TiConvert.toDouble(options.get("zoom"));
         }
     }
 
     // Methods
-    @Kroll.method
-    public void printMessage(String message)
-    {
-        Log.d(TAG, "printing message: " + message);
-    }
 
-
-    @Kroll.getProperty @Kroll.method
-    public String getMessage()
-    {
-        return "Hello World from my module";
-    }
-
-    @Kroll.setProperty @Kroll.method
-    public void setMessage(String message)
-    {
-        Log.d(TAG, "Tried setting module message to: " + message);
-    }
 }

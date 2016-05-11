@@ -53,4 +53,12 @@
 	</target>
 
 	<import file="${titanium.platform}/../module/android/build.xml"/>
+
+	<target name="post.jar">
+		<copy todir="${libs}">
+			<fileset dir="lib">
+				<include name="**/*.so"/>
+			</fileset>
+		</copy>
+	</target>
 </project>

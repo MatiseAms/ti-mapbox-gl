@@ -107,6 +107,8 @@ public class MapViewProxy extends TiViewProxy
                     public void onMapReady(MapboxMap _mapboxMap) {
                         mapboxMap = _mapboxMap;
 
+                        // MapboxModule.getInstance().map = _mapboxMap;
+
                         // Customize map with markers, polylines, etc.
 
                     }
@@ -168,5 +170,13 @@ public class MapViewProxy extends TiViewProxy
     }
 
     // Methods
+    @Kroll.method
+	public void addAnnotation(PointAnnotationProxy proxy)
+	{
+        // Log.d(TAG, "Unknown class " + args[0].getClass().getSimpleName());
 
+    //     PointAnnotationProxy proxy = (PointAnnotationProxy) args[0];
+    //
+        proxy.marker = mapboxMap.addMarker(proxy.options);
+    }
 }

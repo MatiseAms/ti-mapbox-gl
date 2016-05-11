@@ -27,20 +27,28 @@ function moduleBootstrap(moduleBinding) {
 		addInvocationAPI(module, "Mapbox", "Mapbox", "createDemoView");
 	addInvocationAPI(module, "Mapbox", "Mapbox", "createExample");
 	addInvocationAPI(module, "Mapbox", "Mapbox", "createMapView");
+	addInvocationAPI(module, "Mapbox", "Mapbox", "createPointAnnotation");
 
 			if (!("__propertiesDefined__" in module)) {		
 		Object.defineProperties(module, {
-			"DemoView": {
-				get: function() {
-					var DemoView = lazyGet(this, "matise.mapbox.DemoViewProxy", "DemoView", "DemoView");
-					return DemoView;
-				},
-				configurable: true
-			},
 			"MapView": {
 				get: function() {
 					var MapView = lazyGet(this, "matise.mapbox.MapViewProxy", "MapView", "MapView");
 					return MapView;
+				},
+				configurable: true
+			},
+			"PointAnnotation": {
+				get: function() {
+					var PointAnnotation = lazyGet(this, "matise.mapbox.PointAnnotationProxy", "PointAnnotation", "PointAnnotation");
+					return PointAnnotation;
+				},
+				configurable: true
+			},
+			"DemoView": {
+				get: function() {
+					var DemoView = lazyGet(this, "matise.mapbox.DemoViewProxy", "DemoView", "DemoView");
+					return DemoView;
 				},
 				configurable: true
 			},
@@ -61,6 +69,9 @@ function moduleBootstrap(moduleBinding) {
 		}
 		module.constructor.prototype.createMapView = function() {
 			return new module.MapView(arguments);
+		}
+		module.constructor.prototype.createPointAnnotation = function() {
+			return new module.PointAnnotation(arguments);
 		}
 		}
 		module.__propertiesDefined__ = true;

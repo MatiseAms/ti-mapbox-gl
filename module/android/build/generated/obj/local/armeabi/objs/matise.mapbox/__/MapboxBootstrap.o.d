@@ -106,8 +106,9 @@
  /Users/timanrebel/Library/Android/ndk-r11c/sources/cxx-stl/stlport/stlport/assert.h \
  /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/android/native/include/EventEmitter.h \
  /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/android/native/include/NativeObject.h \
- jni/matise.mapbox.MapboxModule.h jni/matise.mapbox.ExampleProxy.h \
- jni/matise.mapbox.DemoViewProxy.h
+ jni/matise.mapbox.MapboxModule.h jni/matise.mapbox.DemoViewProxy.h \
+ jni/matise.mapbox.ExampleProxy.h \
+ jni/matise.mapbox.PointAnnotationProxy.h
 
 /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/android/native/include/v8.h:
 
@@ -325,6 +326,8 @@ jni/matise.mapbox.MapViewProxy.h:
 
 jni/matise.mapbox.MapboxModule.h:
 
+jni/matise.mapbox.DemoViewProxy.h:
+
 jni/matise.mapbox.ExampleProxy.h:
 
-jni/matise.mapbox.DemoViewProxy.h:
+jni/matise.mapbox.PointAnnotationProxy.h:

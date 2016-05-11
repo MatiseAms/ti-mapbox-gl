@@ -20,6 +20,7 @@
  /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/android/native/include/V8Util.h \
  jni/matise.mapbox.DemoViewProxy.h jni/matise.mapbox.ExampleProxy.h \
  jni/matise.mapbox.MapViewProxy.h \
+ jni/matise.mapbox.PointAnnotationProxy.h \
  /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/android/native/include/org.appcelerator.kroll.KrollModule.h \
  /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/android/native/include/Proxy.h
 
@@ -66,6 +67,8 @@ jni/matise.mapbox.DemoViewProxy.h:
 jni/matise.mapbox.ExampleProxy.h:
 
 jni/matise.mapbox.MapViewProxy.h:
+
+jni/matise.mapbox.PointAnnotationProxy.h:
 
 /Users/timanrebel/Library/Application\ Support/Titanium/mobilesdk/osx/5.2.2.GA/android/native/include/org.appcelerator.kroll.KrollModule.h:
 

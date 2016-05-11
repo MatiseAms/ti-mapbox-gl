@@ -15,6 +15,8 @@ import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.kroll.common.TiConfig;
 
+import com.mapbox.mapboxsdk.maps.MapboxMap;
+
 
 @Kroll.module(name="Mapbox", id="matise.mapbox")
 public class MapboxModule extends KrollModule
@@ -23,6 +25,8 @@ public class MapboxModule extends KrollModule
 	// Standard Debugging variables
 	private static final String LCAT = "MapboxModule";
 	private static final boolean DBG = TiConfig.LOGD;
+	private static MapboxModule instance;
+	private MapboxMap map;
 
 	// You can define constants with @Kroll.constant, for example:
 	// @Kroll.constant public static final String EXTERNAL_NAME = value;
@@ -39,5 +43,10 @@ public class MapboxModule extends KrollModule
 		// put module init code that needs to run when the application is created
 	}
 
-
+	public static MapboxModule getInstance() {
+		if (instance == null) {
+             instance = new MapboxModule();
+        }
+        return instance;
+	}
 }

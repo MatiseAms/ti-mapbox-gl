@@ -38,13 +38,14 @@
 
 #include "matise.mapbox.MapViewProxy.h"
 #include "matise.mapbox.MapboxModule.h"
-#include "matise.mapbox.ExampleProxy.h"
 #include "matise.mapbox.DemoViewProxy.h"
+#include "matise.mapbox.ExampleProxy.h"
+#include "matise.mapbox.PointAnnotationProxy.h"
 
 
-#line 16 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
+#line 17 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
 struct titanium::bindings::BindEntry;
-/* maximum key range = 6, duplicates = 0 */
+/* maximum key range = 9, duplicates = 0 */
 
 class MapboxBindings
 {
@@ -59,32 +60,32 @@ MapboxBindings::hash (register const char *str, register unsigned int len)
 {
   static unsigned char asso_values[] =
     {
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32,  2, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32,  5, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32,  0,
-      32,  0, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
-      32, 32, 32, 32, 32, 32
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35,  2, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35,  5, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35,  0,
+       0,  0, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+      35, 35, 35, 35, 35, 35
     };
   return len + asso_values[(unsigned char)str[17]];
 }
@@ -94,11 +95,11 @@ MapboxBindings::lookupGeneratedInit (register const char *str, register unsigned
 {
   enum
     {
-      TOTAL_KEYWORDS = 4,
+      TOTAL_KEYWORDS = 5,
       MIN_WORD_LENGTH = 26,
-      MAX_WORD_LENGTH = 27,
+      MAX_WORD_LENGTH = 34,
       MIN_HASH_VALUE = 26,
-      MAX_HASH_VALUE = 31
+      MAX_HASH_VALUE = 34
     };
 
   static struct titanium::bindings::BindEntry wordlist[] =
@@ -106,15 +107,18 @@ MapboxBindings::lookupGeneratedInit (register const char *str, register unsigned
       {""}, {""}, {""}, {""}, {""}, {""}, {""}, {""}, {""},
       {""}, {""}, {""}, {""}, {""}, {""}, {""}, {""}, {""},
       {""}, {""}, {""}, {""}, {""}, {""}, {""}, {""},
-#line 20 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
+#line 22 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
       {"matise.mapbox.ExampleProxy", ::matise::mapbox::mapbox::ExampleProxy::bindProxy, ::matise::mapbox::mapbox::ExampleProxy::dispose},
 #line 21 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
       {"matise.mapbox.DemoViewProxy", ::matise::mapbox::mapbox::DemoViewProxy::bindProxy, ::matise::mapbox::mapbox::DemoViewProxy::dispose},
-#line 18 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
+#line 19 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
       {"matise.mapbox.MapViewProxy", ::matise::mapbox::mapbox::MapViewProxy::bindProxy, ::matise::mapbox::mapbox::MapViewProxy::dispose},
       {""}, {""},
-#line 19 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
-      {"matise.mapbox.MapboxModule", ::matise::mapbox::MapboxModule::bindProxy, ::matise::mapbox::MapboxModule::dispose}
+#line 20 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
+      {"matise.mapbox.MapboxModule", ::matise::mapbox::MapboxModule::bindProxy, ::matise::mapbox::MapboxModule::dispose},
+      {""}, {""},
+#line 23 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
+      {"matise.mapbox.PointAnnotationProxy", ::matise::mapbox::mapbox::PointAnnotationProxy::bindProxy, ::matise::mapbox::mapbox::PointAnnotationProxy::dispose}
     };
 
   if (len <= MAX_WORD_LENGTH && len >= MIN_WORD_LENGTH)
@@ -131,5 +135,5 @@ MapboxBindings::lookupGeneratedInit (register const char *str, register unsigned
     }
   return 0;
 }
-#line 22 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
+#line 24 "/private/var/folders/70/trd7brdx2sb2k2j59tm3jwf40000gn/T/timanrebel/mapbox-generated/KrollGeneratedBindings.gperf"
 

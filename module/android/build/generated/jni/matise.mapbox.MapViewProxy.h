@@ -30,6 +30,7 @@ public:
 
 private:
 	// Methods -----------------------------------------------------------
+	static v8::Handle<v8::Value> addAnnotation(const v8::Arguments&);
 
 	// Dynamic property accessors ----------------------------------------
 

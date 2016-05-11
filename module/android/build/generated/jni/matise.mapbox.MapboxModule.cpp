@@ -23,6 +23,7 @@
 #include "matise.mapbox.DemoViewProxy.h"
 #include "matise.mapbox.ExampleProxy.h"
 #include "matise.mapbox.MapViewProxy.h"
+#include "matise.mapbox.PointAnnotationProxy.h"
 
 #include "org.appcelerator.kroll.KrollModule.h"
 

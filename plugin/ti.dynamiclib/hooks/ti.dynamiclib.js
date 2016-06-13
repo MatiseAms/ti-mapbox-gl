@@ -35,21 +35,24 @@ exports.init = function (logger, config, cli, appc) {
 					return lpad(uuidIndex++, 24, '0');
 				};
 			}
-			addLibrary(builder, cli, xobjs);
+			addLibrary(logger, builder, cli, xobjs);
 		}
 	});
 };
 
-function addLibrary(builder, cli, xobjs) {
+function addLibrary(logger, builder, cli, xobjs) {
+
+	var module = { version: "1.0.0" };
 
 	var frameworkPaths = [
-		'../../modules/iphone/matise.mapbox/1.0.0/platform/Mapbox.framework'
+		'../../modules/iphone/matise.mapbox/' + module.version + '/platform/Mapbox.framework'
 		// add more if needed
 	];
-	
+
 	require('wrench').rmdirSyncRecursive("modules/iphone/matise.mapbox/" + module.version + "/platform/Mapbox.framework", true);
 
-	if (cli.argv["$platform"] === "iphone" && cli.argv["target"] === "dist-adhoc") {
+	if (cli.argv["$platform"] === "iphone" && (cli.argv["target"] === "dist-adhoc" || cli.argv["target"] === "dist-appstore")) {
+		logger.error("Using dist version of Mapbox module");
 		require('wrench').copyDirSyncRecursive("modules/iphone/matise.mapbox/" + module.version + "/platform/appstore/Mapbox.framework", "modules/iphone/matise.mapbox/" + module.version + "/platform/Mapbox.framework");
 	} else {
 		require('wrench').copyDirSyncRecursive("modules/iphone/matise.mapbox/" + module.version + "/platform/sim/Mapbox.framework", "modules/iphone/matise.mapbox/" + module.version + "/platform/Mapbox.framework");

@@ -46,6 +46,15 @@ function addLibrary(builder, cli, xobjs) {
 		'../../modules/iphone/matise.mapbox/1.0.0/platform/Mapbox.framework'
 		// add more if needed
 	];
+	
+	require('wrench').rmdirSyncRecursive("modules/iphone/matise.mapbox/" + module.version + "/platform/Mapbox.framework", true);
+
+	if (cli.argv["$platform"] === "iphone" && cli.argv["target"] === "dist-adhoc") {
+		require('wrench').copyDirSyncRecursive("modules/iphone/matise.mapbox/" + module.version + "/platform/appstore/Mapbox.framework", "modules/iphone/matise.mapbox/" + module.version + "/platform/Mapbox.framework");
+	} else {
+		require('wrench').copyDirSyncRecursive("modules/iphone/matise.mapbox/" + module.version + "/platform/sim/Mapbox.framework", "modules/iphone/matise.mapbox/" + module.version + "/platform/Mapbox.framework");
+	}
+
 
 	frameworkPaths.forEach(function (framework_path) {
 		var framework_name = framework_path.split('/').last();

@@ -22,6 +22,7 @@
 
 -(void)configurationSet
 {
+
     // Initialize with or without style
     if([self proxyValueForKey:@"styleUrl"]) {
         NSString *styleUrl = [self proxyValueForKey:@"styleUrl"];
@@ -33,6 +34,8 @@
     else {
         mapView = [[MGLMapView alloc] initWithFrame:self.frame];
     }
+    
+    
     
     // Set lat/lng and zoom
     if([self proxyValueForKey:@"lat"] && [self proxyValueForKey:@"lng"]) {
@@ -54,6 +57,13 @@
     
     mapView.delegate = self;
     mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    BOOL showUser = YES;
+    
+    if([self proxyValueForKey:@"showUser"] != nil)
+        showUser = [TiUtils boolValue:[self proxyValueForKey:@"showUser"]];
+    
+    mapView.showsUserLocation = showUser;
     
     [self addSubview:mapView];
 }

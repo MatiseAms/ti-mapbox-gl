@@ -58,6 +58,13 @@
     mapView.delegate = self;
     mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
+    BOOL displayHeadingCalibration = YES;
+    
+    if([self proxyValueForKey:@"displayHeadingCalibration"] != nil)
+        displayHeadingCalibration = [TiUtils boolValue:[self proxyValueForKey:@"displayHeadingCalibration"]];
+    
+    mapView.displayHeadingCalibration = displayHeadingCalibration;
+    
     BOOL showUser = YES;
     
     if([self proxyValueForKey:@"showUser"] != nil)
@@ -163,6 +170,13 @@
            }, NO);
        }
    }
+}
+
+-(void)setUserTrackingMode:(id)args
+{
+    MatiseMapboxPointAnnotationProxy *annotation = [args objectAtIndex:0];
+    
+    [mapView setUserTrackingMode:annotation.marker];
 }
 
 #pragma mark Delegate functions
